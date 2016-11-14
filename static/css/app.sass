@@ -1,0 +1,143 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+$colors
+    red: #f53
+    blue: #48f
+    green: #5fa
+    medium_gray: #777
+    light_gray: #ddd
+    lightest_gray: #f7f7f7
+    tan: #fbe9dc
+    dark: #1f1513
+    purple: #c74eb6
+
+$padding
+    tiny: 2px
+    small: 14px
+    default: 20px
+
+$sizes
+    bar: 20px
+
+body
+    font: 20px/1em Arimo
+    background: #fff
+    border-top: 25px solid $colors.blue
+    padding: 0 40px
+
+.swapper
+    flex-shrink: 0
+    background: #eee
+    padding: $padding.default
+
+button
+    background: $colors.blue
+    -webkit-appearance: none
+    border: none
+    outline: none
+    border-radius: 3px
+    color: #fff
+    padding: $padding.tiny $padding.small
+    font-weight: bold
+
+a, button
+    cursor: pointer
+
+.main
+    height: 100%
+    flex-grow: 1
+    display: flex
+    flex-direction: row
+
+    .words
+        font-size: 18px
+        flex-shrink: 0
+        overflow-y: scroll
+        width: 30%
+
+        .word
+            display: block
+            padding: $padding.tiny $padding.small
+            border-bottom: 1px solid $colors.light_gray
+
+            &:hover
+                background: $colors.lightest_gray
+
+            &:active
+                background: $colors.light_gray
+
+    .middle
+        width: 40%
+
+    .recent-words
+        font-size: 20px
+        width: 30%
+        background: $colors.lightest_gray
+        padding: $padding.default
+        overflow: hidden
+    
+        li
+            list-style: none
+            padding-top: $padding.small
+
+        button
+            float: right
+
+.player
+    display: flex
+    flex-direction: row
+    padding: $padding.small 0 0
+    
+    .name
+        flex-grow: 1
+        font-weight: bold
+
+    .score
+        font-weight: bold
+        margin-right: $padding.small
+
+    .next
+        text-align: right
+
+.team
+    padding: $padding.default
+    border-bottom: 1px solid $colors.light_gray
+
+    .title
+        display: flex
+        padding-bottom: 5px
+
+        h1
+            flex-grow: 1
+
+.team-A .title
+    color: $colors.blue
+.team-B .title
+    color: $colors.red
+
+.spinner-container, .error-container
+    position: fixed
+    top: 50%
+    left: 50%
+    width: 200px
+    height: 100px
+    margin-left: -100px
+    margin-top: -100px
+    padding: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    background: rgba(#000, 0.2)
+    border-radius: 5px
+    color: #fff
+    padding: $padding.small
+
+    i.fa + span
+        margin-top: $padding.default
+        font-size: 20px
+        line-height: 1em
+        display: block
